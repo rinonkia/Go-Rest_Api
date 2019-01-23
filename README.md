@@ -1,9 +1,9 @@
 # GolangでRESTfulなAPIサーバー作ってみた
 
-##概要
+## 概要
 
 GolangでRESTサーバを起動し、POSTメソッドを受け付けるAPIを作成しました。（用語の使い方あってる？）<br>
-`go-json-rest`パッケージを利用して、JSON形式のデータをやりとりする。
+`go-json-rest`パッケージを利用して、JSON形式のデータをやりとりする。<br>
 
  1. httpieを使って `localhost:9999/hello`にアクセス
  2. JSON形式の`Name="gatapon"`のデータを渡す
@@ -71,12 +71,17 @@ X-Powered-By: go-json-rest
 
 ## 詳細（作成中）
 
-ターミナルで叩いたコマンド<br>
-`http -v POST localhost:9999/hello "Content-Type:application/json; charset=utf-8" Name="gatapon"`
+ターミナルで叩いたコマンドについて振り返ります。<br>
 
-<br>
+```
+http -v POST localhost:9999/hello "Content-Type:application/json; charset=utf-8" Name="gatapon"
+```
+
+これを簡単に訳すると、以下のようなことをしています。<br>
 
 「`localhost:9999/hello`にPOSTメソッドでJSON形式の`Name="gatapon"`を渡す。」<br>
+
+このコマンドを受け取ったサーバーの動きを見ていきます。
 
 ### postHello()
 
