@@ -1,4 +1,13 @@
-# Goを使ったrest api
+# GolangでRESTfulなAPIサーバー作ってみた
+
+##概要
+
+GolangでRESTサーバを起動し、POSTメソッドを受け付けるAPIを作成しました。（用語の使い方あってる？）<br>
+`go-json-rest`パッケージを利用して、JSON形式のデータをやりとりする。
+
+ 1. httpieを使って `localhost:9999/hello`にアクセス
+ 2. JSON形式の`Name="gatapon"`のデータを渡す
+ 3. `Hello, gatapon`のレスポンスを受け取る
 
 ### 環境
 
@@ -7,7 +16,9 @@
  
 ### 参考
 
-[こんなに簡単! Goで作るRESTサーバー](https://qiita.com/suin/items/f32fa82d6c35a34e8d16)
+ - [こんなに簡単! Goで作るRESTサーバー](https://qiita.com/suin/items/f32fa82d6c35a34e8d16)
+ - https://golang.org/pkg/
+ - https://github.com/ant0ine/go-json-rest#api-and-static-files
 
 
 ## setting
@@ -60,10 +71,14 @@ X-Powered-By: go-json-rest
 
 ## 詳細（作成中）
 
-叩いたコード<br>
+ターミナルで叩いたコマンド<br>
 `http -v POST localhost:9999/hello "Content-Type:application/json; charset=utf-8" Name="gatapon"`
 
+<br>
+
 「`localhost:9999/hello`にPOSTメソッドでJSON形式の`Name="gatapon"`を渡す。」<br>
+
+### postHello()
 
 ```golang
 // 第一引数 "Content-Type:application/json; charset=utf-8"
@@ -85,4 +100,18 @@ func postHello(w rest.ResponseWriter, req *rest.Request) {
  - 文字列が0の時のバリデーション
  - Json形式の文字列をパース：json.Unmarshal
 
+### 　api := rest.NewApi()
 
+とっても便利である。作成中<br>
+
+`api := rest.NewApi()`コンストラクタを使うだけで、以下のような様々なメソッドが使えるようになる。
+
+ - api.Use
+ - rest.MakeRouter()
+ - rest.Post()
+ - api.MakeHandler()
+
+## 感想
+
+ go-json-restを使えばとても簡単にRESTfullなAPIサーバーが作成できる。<br>
+ これを使えば、思ったより早く簡単なアプリが作成できそう。<br>
