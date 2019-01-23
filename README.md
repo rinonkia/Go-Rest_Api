@@ -63,7 +63,7 @@ X-Powered-By: go-json-rest
 叩いたコード<br>
 `http -v POST localhost:9999/hello "Content-Type:application/json; charset=utf-8" Name="gatapon"`
 
-「`localhost:9999/hello`にPOSTメソッドでJSON形式の`Name="gatapon"`を渡す。」
+「`localhost:9999/hello`にPOSTメソッドでJSON形式の`Name="gatapon"`を渡す。」<br>
 
 ```golang
 // 第一引数 "Content-Type:application/json; charset=utf-8"
