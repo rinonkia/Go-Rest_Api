@@ -4,6 +4,7 @@ import (
 	"log"
 	"net/http"
 
+	// githubから直接パッケージをいっポートできて便利
 	"github.com/ant0ine/go-json-rest/rest"
 )
 
@@ -19,8 +20,10 @@ type postHelloOutput struct {
 
 func postHello(w rest.ResponseWriter, req *rest.Request) {
 	input := postHelloInput{}
+	// 各種バリデーションが行われている README.md参照
 	err := req.DecodeJsonPayload(&input)
 
+	// バリデーションで引っかかったエラーを返す
 	if err != nil {
 		rest.Error(w, err.Error(), http.StatusInternalServerError)
 		return
