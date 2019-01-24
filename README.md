@@ -1,4 +1,4 @@
-# GolangでRESTfulなAPIサーバー作ってみた
+# GolangでRESTfulなAPIサーバー作成
 
 ## 概要
 
@@ -75,7 +75,7 @@ X-Powered-By: go-json-rest
 }
 ```
 
-## 詳細（作成中）
+## 詳細
 
 ターミナルで叩いたコマンドについて振り返ります。<br>
 
@@ -136,5 +136,12 @@ api.MakeHandler()
 
 ## 感想
 
- go-json-restを使えばとても簡単にRESTfullなAPIサーバーが作成できる。<br>
- これを使えば、思ったより早く簡単なアプリが作成できそう。<br>
+ go-json-restを使えばとても簡単にRESTfullなAPIサーバーが作成できます。<br>
+ これを使えば、思ったより早く簡単なアプリが作成できそう。さらにGoの深淵を覗き込みたくなってきました。<br>
+ **MakeHandler**メソッドは内容を理解するのには時間がかかりそうなので、一旦は置いてます。
+
+  - Useで指定したMiddlewareを取り出し、サーバで走らせる
+  - http.Handlerの準備を行なっている
+  
+ これらを行なっているそうですが、まだ私には難しかったです。少しずつ勉強していきます。
+ [MakeHandler()](https://github.com/ant0ine/go-json-rest/blob/ebb33769ae013bd5f518a8bac348c310dea768b8/rest/api.go#L35)
