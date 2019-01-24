@@ -126,11 +126,11 @@ api.SetApp()
 api.MakeHandler()
 ```
 
- - api.Use  APIサーバーの環境に合わせて用意されたMiddlewareの設定ができる
-  - DefaultDevStack: 開発時に利用するMiddleware群
-  - DefaultProdStack: プロダクト時に利用するMiddleware群
-  - DefaultCommonStack: どちらにしても一般的に利用するMiddleware群
- - api.SetApp :主にrest.MakeRouterのrouterをセットするメソッド
+ - api.Use => APIサーバーの環境に合わせて用意されたMiddlewareの設定ができる
+   - DefaultDevStack    : 開発時に利用するMiddleware群
+   - DefaultProdStack   : プロダクト時に利用するMiddleware群
+   - DefaultCommonStack : どちらにしても一般的に利用するMiddleware群
+ - api.SetApp => 主にrest.MakeRouterのrouterをセットするメソッド
  - api.MakeHandler() 
 
 
