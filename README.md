@@ -29,6 +29,12 @@ GolangでRESTサーバを起動し、POSTメソッドを受け付けるAPIを作
 $ brew install httpie
 ```
 
+適当なフォルダを作り、`git clone`<br>
+
+```
+git clone https://github.com/rinonkia/Go-Rest_Api.git
+```
+
 プログラムの実行。これでサーバが起動しAPIにアクセスができます。<br>
 
 ```
