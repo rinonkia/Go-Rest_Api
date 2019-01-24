@@ -102,14 +102,26 @@ func postHello(w rest.ResponseWriter, req *rest.Request) {
 
 ### 　api := rest.NewApi()
 
-とっても便利である。作成中<br>
+[NewApi()](https://github.com/ant0ine/go-json-rest/blob/ebb33769ae013bd5f518a8bac348c310dea768b8/rest/api.go#L14)
 
-`api := rest.NewApi()`コンストラクタを使うだけで、以下のような様々なメソッドが使えるようになる。
+`NewApi()`は3つの強力なメソッドを持っており、それらを使うことで艱難にAPIサーバーを立ち上げることができます。<br>
 
- - api.Use
- - rest.MakeRouter()
- - rest.Post()
- - api.MakeHandler()
+```golang
+
+api := NewApi()
+
+api.Use()
+api.SetApp()
+api.MakeHandler()
+```
+
+ - api.Use  APIサーバーの環境に合わせて用意されたMiddlewareの設定ができる
+  - DefaultDevStack: 開発時に利用するMiddleware群
+  - DefaultProdStack: プロダクト時に利用するMiddleware群
+  - DefaultCommonStack: どちらにしても一般的に利用するMiddleware群
+ - api.SetApp :主にrest.MakeRouterのrouterをセットするメソッド
+ - api.MakeHandler() 
+
 
 ## 感想
 
