@@ -87,7 +87,7 @@ http -v POST localhost:9999/hello "Content-Type:application/json; charset=utf-8"
 
 「`localhost:9999/hello`にPOSTメソッドでJSON形式の`Name="gatapon"`を渡す。」<br>
 
-このコマンドを受け取ったサーバーの動きを見ていきます。
+このコマンドを受け取ったサーバーの動きを見ていきます。<br>
 
 ### postHello()
 
@@ -138,10 +138,13 @@ api.MakeHandler()
 
  go-json-restを使えばとても簡単にRESTfullなAPIサーバーが作成できます。<br>
  これを使えば、思ったより早く簡単なアプリが作成できそう。さらにGoの深淵を覗き込みたくなってきました。<br>
- **MakeHandler**メソッドは内容を理解するのには時間がかかりそうなので、一旦は置いてます。
+ **MakeHandler**メソッドは内容を理解するのには時間がかかりそうなので、一旦は置いてます。<br>
+ 
+  [MakeHandler()](https://github.com/ant0ine/go-json-rest/blob/ebb33769ae013bd5f518a8bac348c310dea768b8/rest/api.go#L35)
 
   - Useで指定したMiddlewareを取り出し、サーバで走らせる
   - http.Handlerの準備を行なっている
   
- これらを行なっているそうですが、まだ私には難しかったです。少しずつ勉強していきます。
- [MakeHandler()](https://github.com/ant0ine/go-json-rest/blob/ebb33769ae013bd5f518a8bac348c310dea768b8/rest/api.go#L35)
+ これらを行なっているそうですが、まだ私には難しかったです。少しずつ勉強していきます。<br>
+ 
+
